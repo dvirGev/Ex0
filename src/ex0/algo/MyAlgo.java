@@ -11,7 +11,7 @@ import ex0.Elevator;
 public class MyAlgo  implements ElevatorAlgo{
     private Building building;
     private DataOfElevator[] data;
-    private Elevator[] elevators;
+    public Elevator[] elevators; // public for test
     private ArrayList<Integer> express;
 
     public MyAlgo(Building building){
@@ -29,14 +29,7 @@ public class MyAlgo  implements ElevatorAlgo{
         for (int i = 0; i < elevators.length; i++) {
             elevators[i] = building.getElevetor(i);
             speed.add(i);
-            if(i % 2 == 0){
-                data[i] = new DataOfElevator(-1);
-                data[i].add(building.minFloor());
-            }
-            else {
-                data[i] = new DataOfElevator(1);
-                data[i].add(building.maxFloor());  
-            } 
+            data[i] = new DataOfElevator(0);
         }
         int count = building.numberOfElevetors() / 4;
         while (!(speed.isEmpty()) && count-- > 0) {
@@ -181,7 +174,6 @@ class DataOfElevator {
     public DataOfElevator(int state) {
         this.state = state;
         elevDest = (state == 1)? new PriorityQueue<>(): new PriorityQueue<>(Comparator.reverseOrder());
-        //chageDirection();
     }
     public void chageDirection(int state) {
         this.state = state;
@@ -220,7 +212,6 @@ class DataOfElevator {
     } 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return elevDest.toString() + ", " + state + ", " + dest;
     }
 }
