@@ -1,16 +1,14 @@
-package ex0.algo;
+package ex0.tests;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import ex0.Building;
 import ex0.CallForElevator;
-import ex0.Elevator;
+import ex0.algo.MyAlgo;
 import ex0.simulator.Call_A;
-import ex0.simulator.ElevetorCallList;
 import ex0.simulator.Simulator_A;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MyAlgoTest {
 
