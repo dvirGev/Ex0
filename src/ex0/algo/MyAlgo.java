@@ -166,7 +166,7 @@ public class MyAlgo  implements ElevatorAlgo{
         return num;
     }
 }
-class DataOfElevator {
+/*class DataOfElevator {
     private PriorityQueue<Integer> elevDest;
     public int dest;
     public int state; // 1, 0 -1
@@ -214,4 +214,4 @@ class DataOfElevator {
     public String toString() {
         return elevDest.toString() + ", " + state + ", " + dest;
     }
-}
+}*/
